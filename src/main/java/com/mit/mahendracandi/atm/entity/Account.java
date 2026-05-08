@@ -5,11 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
-@Table(name = "account")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,5 +24,5 @@ public class Account {
     private String name;
     
     @Column(nullable = false)
-    private BigDecimal balance;
+    private Long balance;
 }
