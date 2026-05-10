@@ -1,4 +1,4 @@
-### GET request to example server
+### Login
 POST http://localhost:8080/login
 Content-Type: application/json
 
@@ -6,4 +6,6 @@ Content-Type: application/json
     "accountNumber": "100001"
 }
 
-###
+### Get account by account number
+
+GET localhost:8080/account?accountNumber=100001
