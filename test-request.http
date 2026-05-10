@@ -9,3 +9,13 @@ Content-Type: application/json
 ### Get account by account number
 
 GET localhost:8080/account?accountNumber=100001
+
+### Post transaction withdraw
+
+POST localhost:8080/transaction/withdraw
+Content-Type: application/json
+
+{
+    "accountNumber": "100001",
+    "amount": 10
+}
