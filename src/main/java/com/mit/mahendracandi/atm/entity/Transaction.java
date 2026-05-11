@@ -19,10 +19,9 @@ public class Transaction {
         this.type = transactionType;
     }
 
-    public Transaction(TransactionType transactionType, Long amount, Account account) {
+    public Transaction(TransactionType transactionType, Account account) {
         this.type = transactionType;
         this.account = account;
-        this.amount = amount;
     }
 
     @Id
@@ -31,8 +30,6 @@ public class Transaction {
 
     @Enumerated(EnumType.STRING)
     private TransactionType type;
-
-    private Long amount;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Account account;

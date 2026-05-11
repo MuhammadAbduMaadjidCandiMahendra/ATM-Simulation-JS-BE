@@ -11,6 +11,9 @@ public class Withdraw extends Transaction {
     }
 
     public Withdraw(Long amount, Account account) {
-        super(TransactionType.WITHDRAW, amount, account);
+        super(TransactionType.WITHDRAW, account);
+        this.amount = amount;
     }
+
+    private Long amount;
 }

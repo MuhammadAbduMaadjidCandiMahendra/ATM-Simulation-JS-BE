@@ -17,16 +17,16 @@ public class DataInitializer {
         return args -> {
             if (repository.count() == 0) {
                 List<Account> accounts = List.of(
-                    new Account(null, "100001", "John Doe", 5000L),
-                    new Account(null, "100002", "Jane Smith", 7500L),
-                    new Account(null, "100003", "Michael Johnson", 3200L),
-                    new Account(null, "100004", "Emily Davis", 12000L),
-                    new Account(null, "100005", "David Wilson", 850L),
-                    new Account(null, "100006", "Sarah Brown", 9999L),
-                    new Account(null, "100007", "James Taylor", 4500L),
-                    new Account(null, "100008", "Lisa Anderson", 6200L),
-                    new Account(null, "100009", "Robert Martinez", 15000L),
-                    new Account(null, "100010", "Jennifer Garcia", 2750L)
+                    new Account("100001", "1001", "John Doe", 5000L),
+                    new Account("100002", "1002", "Jane Smith", 7500L),
+                    new Account("100003", "1003", "Michael Johnson", 3200L),
+                    new Account("100004", "1004", "Emily Davis", 12000L),
+                    new Account("100005", "1005", "David Wilson", 850L),
+                    new Account("100006", "1006", "Sarah Brown", 9999L),
+                    new Account("100007", "1007", "James Taylor", 4500L),
+                    new Account("100008", "1008", "Lisa Anderson", 6200L),
+                    new Account("100009", "1009", "Robert Martinez", 15000L),
+                    new Account("100010", "1010", "Jennifer Garcia", 2750L)
                 );
                 repository.saveAll(accounts);
             }
