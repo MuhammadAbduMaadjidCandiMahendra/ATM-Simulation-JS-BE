@@ -1,7 +1,6 @@
 package com.mit.mahendracandi.atm.controller;
 
 import com.mit.mahendracandi.atm.dto.WithdrawRequest;
-import com.mit.mahendracandi.atm.dto.WithdrawResponse;
 import com.mit.mahendracandi.atm.service.TransactionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +17,8 @@ public class TransactionController {
     private final TransactionService transactionService;
 
     @PostMapping(path = "/withdraw", produces = "application/json")
-    public ResponseEntity<WithdrawResponse> withdraw(@RequestBody WithdrawRequest request) {
-        final var transaction = transactionService.withdraw(request.accountNumber(), request.amount());
-        return ResponseEntity.ok(WithdrawResponse.from(transaction));
+    public ResponseEntity<Void> withdraw(@RequestBody WithdrawRequest request) {
+        transactionService.withdraw(request.accountNumber(), request.amount());
+        return ResponseEntity.ok().build();
     }
 }
