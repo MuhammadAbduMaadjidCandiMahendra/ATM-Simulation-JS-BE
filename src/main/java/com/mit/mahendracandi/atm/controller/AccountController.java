@@ -6,6 +6,7 @@ import com.mit.mahendracandi.atm.service.AccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,8 +17,8 @@ public class AccountController {
 
     private final AccountService accountService;
 
-    @GetMapping(produces = "application/json")
-    public ResponseEntity<AccountDetailDto> getAccount(String accountNumber) {
+    @GetMapping(path = "/{accountNumber}", produces = "application/json")
+    public ResponseEntity<AccountDetailDto> getAccount(@PathVariable String accountNumber) {
         final var account = accountService.findByAccountNumber(accountNumber);
 
         if (account.isEmpty()) {
