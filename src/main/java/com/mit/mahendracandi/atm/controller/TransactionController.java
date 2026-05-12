@@ -1,5 +1,6 @@
 package com.mit.mahendracandi.atm.controller;
 
+import com.mit.mahendracandi.atm.dto.AccountDetailDto;
 import com.mit.mahendracandi.atm.dto.WithdrawRequest;
 import com.mit.mahendracandi.atm.service.TransactionService;
 import lombok.RequiredArgsConstructor;
@@ -17,8 +18,8 @@ public class TransactionController {
     private final TransactionService transactionService;
 
     @PostMapping(path = "/withdraw", produces = "application/json")
-    public ResponseEntity<Void> withdraw(@RequestBody WithdrawRequest request) {
-        transactionService.withdraw(request.accountNumber(), request.amount());
-        return ResponseEntity.ok().build();
+    public ResponseEntity<AccountDetailDto> withdraw(@RequestBody WithdrawRequest request) {
+        final var withdraw = transactionService.withdraw(request.accountNumber(), request.amount());
+        return ResponseEntity.ok(AccountDetailDto.from(withdraw.getAccount()));
     }
 }
