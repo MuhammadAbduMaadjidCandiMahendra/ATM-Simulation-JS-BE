@@ -23,5 +23,5 @@ Run the application:
 ### Windows
 
 ```bat
-mvnw.cmd spring-boot:run
+.\mvnw spring-boot:run
 ```
