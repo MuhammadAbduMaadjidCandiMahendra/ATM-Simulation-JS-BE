@@ -19,3 +19,13 @@ Content-Type: application/json
     "accountNumber": "100001",
     "amount": 10
 }
+
+### Post transaction deposit
+
+POST localhost:8080/transaction/deposit
+Content-Type: application/json
+
+{
+  "accountNumber": "100001",
+  "amount": 0
+}
